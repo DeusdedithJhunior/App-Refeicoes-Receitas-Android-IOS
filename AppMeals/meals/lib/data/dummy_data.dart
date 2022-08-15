@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 
+// base de dados com as categorias dos produtos
 const dummyCategories = [
   Category(
     id: 'c1',
