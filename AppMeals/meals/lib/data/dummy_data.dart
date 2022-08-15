@@ -379,4 +379,3 @@ const dummyMeals = [
     isLactoseFree: true,
   ),
 ];
-
