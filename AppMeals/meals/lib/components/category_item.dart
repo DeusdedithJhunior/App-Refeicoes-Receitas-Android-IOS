@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/category.dart';
-import '../screens/categories_meals_screen.dart';
 
 //aqui ficará a classe que irá "converter" a base de dados
 //em um componente visual, que será mostrado dentro de categories screen
@@ -15,12 +14,9 @@ class CategoryItem extends StatelessWidget {
 
   // metodo (ação) que irá chamar a tela categories meals screen
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoriesMealsScreen(category);
-        },
-      ),
+    Navigator.of(context).pushNamed(
+      '/categories-meals',
+      arguments: category,
     );
   }
 

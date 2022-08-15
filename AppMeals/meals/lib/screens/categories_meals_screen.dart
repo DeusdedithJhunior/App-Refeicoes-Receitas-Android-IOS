@@ -4,13 +4,11 @@ import '../models/category.dart';
 //aqui será a classe que terá todas as comidas referentes as suas
 //respectivas categorias
 class CategoriesMealsScreen extends StatelessWidget {
-  final Category category;
-
-  // ignore: use_key_in_widget_constructors
-  const CategoriesMealsScreen(this.category);
+  const CategoriesMealsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final category = ModalRoute.of(context)?.settings.arguments as Category;
     return Scaffold(
       appBar: AppBar(
         title: Text(category.title),
