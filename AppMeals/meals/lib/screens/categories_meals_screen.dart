@@ -9,6 +9,13 @@ class CategoriesMealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Receitas'),
+      ),
+      body: const Center(
+        child: Text('Receitas por Categoria'),
+      ),
+    );
   }
 }
