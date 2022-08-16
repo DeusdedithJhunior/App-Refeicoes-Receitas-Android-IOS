@@ -3,6 +3,7 @@ import '../models/meal.dart';
 import '../utils/app_routes.dart';
 
 class MealItem extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const MealItem(this.meal);
 
   final Meal meal;
