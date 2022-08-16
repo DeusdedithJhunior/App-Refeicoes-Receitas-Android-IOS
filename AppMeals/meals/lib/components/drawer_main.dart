@@ -6,7 +6,7 @@ class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
 
   // função quer irá criar os icones
-  Widget _createItem(IconData icon, String label, Function onTap) {
+  Widget _createItem(IconData icon, String label, void Function() onTap) {
     return ListTile(
       leading: Icon(
         icon,
@@ -19,7 +19,7 @@ class MainDrawer extends StatelessWidget {
             fontSize: 24,
             fontWeight: FontWeight.bold),
       ),
-      onTap: onTap(),
+      onTap: onTap,
     );
   }
 
