@@ -1,4 +1,4 @@
-# App (Android e IOS)
+# App de Refeições (Android e IOS)
 
 Nesse projeto você irá encontrar:
 
