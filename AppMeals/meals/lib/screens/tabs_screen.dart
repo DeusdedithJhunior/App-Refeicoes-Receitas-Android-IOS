@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:meals/components/drawer_main.dart';
 import 'categories_screen.dart';
 import 'favorite_screen.dart';
 
-// classe que irá controlar a transição entre as tabs
+// classe que irá controlar (tela de cat e fav) a transição entre as tabs
 class TabsScreen extends StatefulWidget {
   const TabsScreen({Key? key}) : super(key: key);
 
@@ -31,6 +32,7 @@ class _TabsScreenState extends State<TabsScreen> {
         title: Center(
             child: Text(_screens[_selectedScreenIndex]['title'] as String)),
       ),
+      drawer: const MainDrawer(),
       body: _screens[_selectedScreenIndex]['screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
