@@ -25,7 +25,7 @@ Esse Projeto foi criado apenas como prática de estudo. Nele podemos acessar as 
 
 ## 📁Nesse projeto você irá encontrar:
 
-1. Fontes dos aplicados aos textos da aplicação;
+1. Fontes usadas nos textos da aplicação;
 2. A fonte de dados (dados mocados) usada na aplicação, com imagens, descrição do produto, etc;
 3. Arquivo gif que mostra as funcionalidades da aplicação;
 4. Códigos fontes da linguagem de programação usada.
