@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:meals/models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
-  const MealDetailScreen({Key? key}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  const MealDetailScreen(this.onToggleFavorite);
+
+  final Function(Meal) onToggleFavorite;
 
   // metodo (função) que vai pegar o titulo da seção
   Widget _createSectionTitle(BuildContext context, String title) {
@@ -89,7 +92,7 @@ class MealDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pop();
+          onToggleFavorite;
         },
         child: const Icon(Icons.star),
       ),

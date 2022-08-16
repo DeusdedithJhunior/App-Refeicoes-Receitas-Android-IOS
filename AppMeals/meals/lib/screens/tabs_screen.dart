@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:meals/components/drawer_main.dart';
+import '../models/meal.dart';
 import 'categories_screen.dart';
 import 'favorite_screen.dart';
 
 // classe que irá controlar (tela de cat e fav) a transição entre as tabs
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key? key}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  const TabsScreen(this.favoriteMeals);
+
+  final List<Meal> favoriteMeals;
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
@@ -14,10 +18,22 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedScreenIndex = 0;
 
-  final List<Map<String, Object>> _screens = [
-    {'title': 'Lista de Categorias', 'screen': const CategoriesScreen()},
-    {'title': 'Meus Favoritos', 'screen': const FavoriteScreen()}
-  ];
+  late List<Map<String, Object>> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      {
+        'title': 'Lista de Categorias',
+        'screen': const CategoriesScreen(),
+      },
+      {
+        'title': 'Meus Favoritos',
+        'screen': FavoriteScreen(widget.favoriteMeals)
+      }
+    ];
+  }
 
   _selectScreen(int index) {
     setState(() {

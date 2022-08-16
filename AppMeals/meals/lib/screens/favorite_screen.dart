@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:meals/components/meal_item.dart';
+
+import '../models/meal.dart';
 
 // classe da tela das comidas favoritas
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  const FavoriteScreen(this.favoriteMeals);
+
+  final List<Meal> favoriteMeals;
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Minhas refeições favoritas');
+    if (favoriteMeals.isEmpty) {
+      return const Center(
+        child: Text('Minhas refeições favoritas'),
+      );
+    } else {
+      return ListView.builder(
+        itemCount: favoriteMeals.length,
+        itemBuilder: (ctx, index) {
+          return MealItem(favoriteMeals[index]);
+        },
+      );
+    }
   }
 }

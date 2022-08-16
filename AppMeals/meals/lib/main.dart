@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   Settings settings = Settings();
 
   List<Meal> _availableMeals = dummyMeals;
+  List<Meal> _favoriteMeals = [];
 
   void _filterMeals(Settings settings) {
     setState(() {
@@ -38,6 +39,14 @@ class _MyAppState extends State<MyApp> {
             !filterVegetariana &&
             !filterVegana;
       }).toList();
+    });
+  }
+
+  void _toggleFavorite(Meal meal) {
+    setState(() {
+      _favoriteMeals.contains(meal)
+          ? _favoriteMeals.remove(meal)
+          : _favoriteMeals.add(meal);
     });
   }
 
@@ -58,10 +67,10 @@ class _MyAppState extends State<MyApp> {
             )),
       ),
       routes: {
-        AppRoutes.home: (ctx) => const TabsScreen(),
+        AppRoutes.home: (ctx) => TabsScreen(_favoriteMeals),
         AppRoutes.categoriesMeals: (ctx) =>
             CategoriesMealsScreen(_availableMeals),
-        AppRoutes.mealDetail: (ctx) => const MealDetailScreen(),
+        AppRoutes.mealDetail: (ctx) => MealDetailScreen(_toggleFavorite),
         AppRoutes.settings: (ctx) => SettingsScreen(settings, _filterMeals)
       },
     );
