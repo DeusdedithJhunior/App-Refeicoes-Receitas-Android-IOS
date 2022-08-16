@@ -33,59 +33,66 @@ class MealDetailScreen extends StatelessWidget {
     final mealDetail = ModalRoute.of(context)?.settings.arguments as Meal;
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(mealDetail.title),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              // ignore: sized_box_for_whitespace
-              Container(
-                height: 300,
-                width: double.infinity,
-                child: Image.network(
-                  mealDetail.imageUrl,
-                  fit: BoxFit.cover,
-                ),
+      appBar: AppBar(
+        title: Text(mealDetail.title),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            // ignore: sized_box_for_whitespace
+            Container(
+              height: 300,
+              width: double.infinity,
+              child: Image.network(
+                mealDetail.imageUrl,
+                fit: BoxFit.cover,
               ),
-              _createSectionTitle(context, 'Ingredientes'),
-              _createSectionContainer(
-                ListView.builder(
-                  itemCount: mealDetail.ingredients.length,
-                  itemBuilder: (ctx, index) {
-                    return Card(
-                      // ignore: sort_child_properties_last
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 10),
-                        child: Text(mealDetail.ingredients[index]),
-                      ),
-                      color: Theme.of(context).colorScheme.secondary,
-                    );
-                  },
-                ),
+            ),
+            _createSectionTitle(context, 'Ingredientes'),
+            _createSectionContainer(
+              ListView.builder(
+                itemCount: mealDetail.ingredients.length,
+                itemBuilder: (ctx, index) {
+                  return Card(
+                    // ignore: sort_child_properties_last
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 10),
+                      child: Text(mealDetail.ingredients[index]),
+                    ),
+                    color: Theme.of(context).colorScheme.secondary,
+                  );
+                },
               ),
-              _createSectionTitle(context, 'Passos'),
-              _createSectionContainer(
-                ListView.builder(
-                  itemCount: mealDetail.steps.length,
-                  itemBuilder: (ctx, index) {
-                    return Column(
-                      children: [
-                        ListTile(
-                          leading: CircleAvatar(
-                            child: Text('${index + 1}'),
-                          ),
-                          title: Text(mealDetail.steps[index]),
+            ),
+            _createSectionTitle(context, 'Passos'),
+            _createSectionContainer(
+              ListView.builder(
+                itemCount: mealDetail.steps.length,
+                itemBuilder: (ctx, index) {
+                  return Column(
+                    children: [
+                      ListTile(
+                        leading: CircleAvatar(
+                          child: Text('${index + 1}'),
                         ),
-                        const Divider()
-                      ],
-                    );
-                  },
-                ),
+                        title: Text(mealDetail.steps[index]),
+                      ),
+                      const Divider()
+                    ],
+                  );
+                },
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: const Icon(Icons.star),
+      ),
+    );
   }
 }
