@@ -6,10 +6,10 @@ import 'favorite_screen.dart';
 
 // classe que irá controlar (tela de cat e fav) a transição entre as tabs
 class TabsScreen extends StatefulWidget {
+  final List<Meal> favoriteMeals;
+
   // ignore: use_key_in_widget_constructors
   const TabsScreen(this.favoriteMeals);
-
-  final List<Meal> favoriteMeals;
 
   @override
   State<TabsScreen> createState() => _TabsScreenState();
