@@ -13,7 +13,7 @@ Esse Projeto foi criado apenas como prática de estudo. Nele podemos acessar as 
 - Navegação usando rotas nomeadas;
 - Drawer personalizado;
 
-### Observação: Não utilizei nenhuma técnica de gerenciamento de estado (não ainda), os dados nessa aplicação são passados de forma direta (via construtor).
+### Observação: Não utilizei nenhuma técnica de gerenciamento de estado, os dados nessa aplicação são passados de forma direta (via construtor).
 ##
 
 ## 🛠️ Tecnologias utilizadas
@@ -27,7 +27,7 @@ Esse Projeto foi criado apenas como prática de estudo. Nele podemos acessar as 
 
 1. Fontes usadas nos textos da aplicação;
 2. A fonte de dados (dados mocados) usada na aplicação, com imagens, descrição do produto, etc;
-3. Arquivo gif que mostra as funcionalidades da aplicação;
+3. Arquivo em vídeo (mp4) que mostra as funcionalidades da aplicação;
 4. Códigos fontes da linguagem de programação usada.
 
 ### Observações:
