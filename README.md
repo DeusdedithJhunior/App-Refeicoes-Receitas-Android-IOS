@@ -3,3 +3,8 @@
  
  # Overview App Refeições Receitas (Nativo Android e IOS)
  
+ <p align ="center">
+   <img width="470" height="300" scr="Assets_to_readme/App Refeições Receitas.gif">
+</p>
+
+
